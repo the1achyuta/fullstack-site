@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shades of Chettinad | Vintage Arts from Karaikudi</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Font suggestion for elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. Navigation Bar (Sticky for premium feel) -->
+    <header class="main-header">
+        <div class="container nav-flex">
+            <!-- Navigation links removed per CMO to simplify UX -->
+            <div class="header-actions grouped-actions">
+                <button class="search-btn" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: text-bottom;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Search</button>
+                <button class="auth-btn" aria-label="Login or Account">Login / Account</button>
+                <button class="cart-btn" aria-label="View Cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: text-bottom;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section (The big first impression) -->
+    <section id="hero" class="hero-section" aria-label="Hero">
+        <div class="hero-text">
+            <div class="hero-logo" style="margin-bottom: 2rem;" id="hero-logo-container">
+                <img src="logo.png" alt="Shades of Chettinad Logo" title="Shades of Chettinad" id="hero-logo-target" style="margin-bottom: 15px; width: 140px; height: 140px; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1>Where Heritage Meets Home.</h1>
+            <p>Curated Chettinad artifacts, modern art, and timeless Indian craftsmanship, delivered to your world.</p>
+            <a href="#collections" class="cta-button large-btn">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- 3. Storytelling Section (Building Trust) -->
+    <section id="story" class="story-section container" aria-label="About Us">
+        <h2>The Soul of Chettinad</h2>
+        <p>Every piece carries a story—a whisper from generations past, hand-crafted in the rich heartland of Karaikudi. We preserve the finest artifacts so you can integrate history into your modern life.</p>
+    </section>
+
+    <!-- 4. Category Showcase (The main links) -->
+    <section id="collections" class="collection-grid container" aria-label="Collections">
+        <h2>Shop by Collection</h2>
+        <div class="category-cards grid-3">
+             <!-- Card for Vintage Arts -->
+            <a href="products.html?category=vintage" style="display: contents; text-decoration: none; color: inherit;">
+            <figure class="card" data-category="vintage">
+                <img src="placeholder_vintage.jpg" alt="Vintage Arts & Antiques">
+                <h3>Vintage Arts & Antiques</h3>
+                <p>Authentic relics from the heritage homes of Chettinad.</p>
+                <span class="card-link" aria-label="Shop Vintage Arts">Shop Now &rarr;</span>
+            </figure>
+            </a>
+
+             <!-- Card for Modern Arts -->
+            <a href="products.html?category=modern" style="display: contents; text-decoration: none; color: inherit;">
+            <figure class="card" data-category="modern">
+                <img src="placeholder_modern.jpg" alt="Modern & Minimalist Collection">
+                <h3>Modern Collection</h3>
+                <p>Contemporary aesthetics blended with traditional soul.</p>
+                <span class="card-link" aria-label="Shop Modern Arts">Shop Now &rarr;</span>
+            </figure>
+            </a>
+
+             <!-- Card for Gifting -->
+            <a href="products.html?category=gifting" style="display: contents; text-decoration: none; color: inherit;">
+            <figure class="card" data-category="gifting">
+                <img src="placeholder_gifting.jpg" alt="Exquisite Gifting Options">
+                <h3>Gifting & Rituals</h3>
+                <p>Curated sets for auspicious occasions and corporate gifting.</p>
+                <span class="card-link" aria-label="Shop Gifting">Shop Now &rarr;</span>
+            </figure>
+            </a>
+
+             <!-- Card for Home Decor -->
+            <a href="products.html?category=home-decor" style="display: contents; text-decoration: none; color: inherit;">
+            <figure class="card" data-category="home-decor">
+                <img src="placeholder_decor.jpg" alt="Exotic Home Decor">
+                <h3>Home Decors</h3>
+                <p>Elevate your space with our premium hand-crafted selections.</p>
+                <span class="card-link" aria-label="Shop Home Decors">Shop Now &rarr;</span>
+            </figure>
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="products.html" class="cta-button large-btn view-all-btn" style="display: inline-block; text-decoration: none;">View All Products &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Shop section removed. Products are now on products.html -->
+
+    <!-- 6. Footer (Information and Trust) -->
+    <footer>
+        <div class="container footer-flex">
+            <div class="footer-info">
+                <h4>Shades of Chettinad</h4>
+                <p>&copy; 2026. Preserving the art of Karaikudi.</p>
+            </div>
+             <div class="footer-links grid-3">
+                 <div><h5>Support</h5><ul><li>Contact Us</li><li>Returns & Exchanges</li></ul></div>
+                 <div><h5>Shop</h5><ul><li>Vintage Art</li><li>Modern Collection</li><li>Home Decor</li></ul></div>
+                 <div><h5>Quick Links</h5><ul><li>About Karaikudi</li><li>FAQ</li><li>Terms of Service</li></ul></div>
+             </div>
+            <div class="footer-payment">
+                <span>Secure Payments via Stripe & Razorpay</span> 
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart</h2>
+                <div style="display: flex; gap: 10px;">
+                    <button id="clear-cart-btn" class="close-btn" aria-label="Clear cart" style="color: var(--color-muted-gold); display: flex; align-items: center; justify-content: center;" title="Clear Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>
+                    <button id="close-modal-btn" class="close-btn" aria-label="Close cart">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body" id="cart-items-container">
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">Total: $<span id="cart-total-price">0.00</span></div>
+                <button id="checkout-btn" class="cta-button">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clear Cart Confirmation Modal -->
+    <div id="clear-cart-modal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <div class="modal-header">
+                <h2>Clear Cart</h2>
+                <button class="close-btn" id="close-clear-cart-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 20px;">Are you sure you want to clear your cart?</p>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <button id="confirm-clear-cart-btn" class="cta-button" style="background: transparent; border: 1px solid #888; color: #888;">Yes, Clear</button>
+                    <button id="abort-clear-cart-btn" class="cta-button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden" aria-live="polite"></div>
+
+    <!-- Search Overlay -->
+    <div id="search-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Search Artifacts</h2>
+                <button id="close-search-btn" class="close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for 'Pillar', 'Art'..." required>
+                    <button type="submit" class="cta-button">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h2 id="auth-title">Login</h2>
+                <button id="close-auth-btn" class="close-btn" aria-label="Close auth">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- 1. Options View -->
+                <div id="auth-options-view" style="text-align: center; padding: 10px 0;">
+                    <button id="btn-show-email-signup" class="cta-button" style="width: 100%; margin-bottom: 20px;">Sign up using Email</button>
+                    
+                    <div id="google-login-wrapper" style="margin-bottom: 20px;">
+                        <div id="g_id_onload"
+                             data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                             data-context="signin"
+                             data-ux_mode="popup"
+                             data-callback="handleCredentialResponse"
+                             data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin"
+                             data-type="standard"
+                             data-shape="rectangular"
+                             data-theme="outline"
+                             data-text="signup_with"
+                             data-size="large"
+                             data-logo_alignment="left"
+                             style="display: flex; justify-content: center;">
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 15px;">
+                        <a href="#" id="btn-show-login">Already have an account? Log in back</a>
+                    </p>
+                </div>
+
+                <!-- 2. Email Signup Form -->
+                <form id="auth-register-form" class="hidden">
+                    <div>
+                        <label for="auth-reg-name">Name</label>
+                        <input type="text" id="auth-reg-name" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="auth-reg-email">Email</label>
+                        <input type="email" id="auth-reg-email" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="auth-reg-password">Password</label>
+                        <input type="password" id="auth-reg-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="cta-button" id="auth-reg-submit-btn" style="margin-top: 15px; width: 100%;">Create Account</button>
+                    <p style="text-align: center; margin-top: 15px;">
+                        <a href="#" class="btn-back-options">&laquo; Back to options</a>
+                    </p>
+                </form>
+
+                <!-- 3. Email Login Form -->
+                <form id="auth-login-form" class="hidden">
+                    <div>
+                        <label for="auth-log-email">Email</label>
+                        <input type="email" id="auth-log-email" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="auth-log-password">Password</label>
+                        <input type="password" id="auth-log-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="cta-button" id="auth-log-submit-btn" style="margin-top: 15px; width: 100%;">Login</button>
+                    <p style="text-align: center; margin-top: 15px;">
+                        <a href="#" class="btn-back-options">&laquo; Back to options</a>
+                    </p>
+                </form>
+
+                <!-- 4. OTP Verification Form -->
+                <form id="otp-form" class="hidden" style="margin-top: 15px;">
+                    <p style="text-align: center; margin-bottom: 10px; font-size: 0.9em; color: var(--color-primary-accent);">Please enter the 6-digit OTP sent to your email.</p>
+                    <label for="auth-otp">Enter OTP</label>
+                    <input type="text" id="auth-otp" placeholder="123456" required>
+                    <button type="submit" class="cta-button" style="margin-top: 15px; width: 100%;">Verify OTP</button>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="#" class="btn-back-options">&laquo; Back to options</a>
+                    </div>
+                </form>
+
+                <!-- 4. Logged In View -->
+                <div id="auth-logged-in-view" class="hidden" style="text-align: center; padding: 10px 0;">
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">You are currently logged in.</p>
+                    <button id="btn-go-dashboard" class="cta-button" style="width: 100%; margin-bottom: 15px;">Go to Dashboard</button>
+                    <button id="btn-logout" class="cta-button" style="width: 100%; background: transparent; border: 1px solid var(--border-color); color: var(--text-light);">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Modal (For Footer Links) -->
+    <div id="info-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="info-title">Information</h2>
+                <button id="close-info-btn" class="close-btn" aria-label="Close info">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="info-content">Content goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Write a Review</h2>
+                <button id="close-review-btn" class="close-btn" aria-label="Close review">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="review-form">
+                    <input type="hidden" id="review-product-id">
+                    <div>
+                        <label for="review-rating">Rating (1-5)</label>
+                        <input type="number" id="review-rating" min="1" max="5" value="5" required style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px;">
+                    </div>
+                    <div>
+                        <label for="review-text">Review</label>
+                        <textarea id="review-text" rows="3" placeholder="Tell us what you think..." style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px;"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" id="review-submit-btn" style="width: 100%;">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
+
+

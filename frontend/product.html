@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Shades of Chettinad</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container nav-flex">
+            
+            <!-- Navigation links removed per CMO to simplify UX -->
+            <div class="header-actions compact-header">
+                <button class="home-btn" aria-label="Home" onclick="window.location.href='index.html'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: text-bottom;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Home</button>
+                <button class="cta-button" aria-label="Shop More" onclick="window.location.href='products.html'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: text-bottom;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>Shop More</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding: 20px 0;">
+        <nav id="breadcrumbs" style="font-size: 0.9em; color: #666; margin-bottom: 20px;">
+            <a href="index.html" style="color: var(--color-muted-gold); text-decoration: none; transition: color 0.3s ease;">Home</a> &gt; <a href="#" id="breadcrumb-category" style="color: var(--color-muted-gold); text-decoration: none; text-transform: capitalize; transition: color 0.3s ease;">Category</a> &gt; <span id="breadcrumb-name" style="color: var(--color-text-muted);">Product Name</span>
+        </nav>
+    </div>
+
+    <section class="container" id="product-detail-section" style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
+        <!-- Filled by JS -->
+        <div class="loader"></div>
+    </section>
+
+    <section class="container" id="product-reviews-section" style="margin-bottom: 50px;">
+        <!-- Filled by JS -->
+    </section>
+
+    <section class="container" id="product-recommendations-section" style="margin-bottom: 50px; display: none;">
+        <h2 style="margin-bottom: 20px; font-family: 'Playfair Display', serif;">Recommended for You</h2>
+        <div class="product-grid" id="recommendations-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px;">
+            <!-- Filled by JS -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-flex">
+            <div class="footer-info">
+                <h4>Shades of Chettinad</h4>
+                <p>&copy; 2026. Preserving the art of Karaikudi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Write a Review</h2>
+                <button id="close-review-btn" class="close-btn" aria-label="Close review">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="review-form">
+                    <div>
+                        <label for="review-rating">Rating (1-5)</label>
+                        <input type="number" id="review-rating" min="1" max="5" value="5" required style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px;">
+                    </div>
+                    <div>
+                        <label for="review-text">Review</label>
+                        <textarea id="review-text" rows="3" placeholder="Tell us what you think..." style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px;"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" id="review-submit-btn" style="width: 100%;">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden" aria-live="polite"></div>
+
+    <script src="product.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story | Shades of Chettinad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            color: #9b2226;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .article-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .article-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+        }
+        .featured-section {
+            background: #fdfcfa;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-top: 1px solid #eaeaea;
+        }
+        .featured-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container nav-flex">
+            
+            <nav class="nav-links">
+                <a href="index.html">Shop</a>
+                <a href="stories.html">Stories</a>
+                <a href="dashboard.html">My Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="story-main">
+        <div class="loader" style="margin: 100px auto;"></div>
+    </main>
+
+    <footer>
+        <div class="container footer-flex" style="text-align: center; justify-content: center;">
+            <p>&copy; 2026 Shades of Chettinad. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const storyId = urlParams.get('id');
+            const main = document.getElementById('story-main');
+            
+            if (!storyId) {
+                main.innerHTML = '<p style="text-align:center; margin-top:50px;">Story not found.</p>';
+                return;
+            }
+            
+            try {
+                const res = await fetch(`/backend/api.php?action=get_story&id=${storyId}`);
+                const data = await res.json();
+                
+                if (data.success) {
+                    const s = data.data.story;
+                    document.title = `${s.title} | Shades of Chettinad`;
+                    
+                    let featuredHtml = '';
+                    if (data.data.featured_products && data.data.featured_products.length > 0) {
+                        const prods = data.data.featured_products.map(p => `
+                            <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'" style="cursor:pointer; border:1px solid #eee; padding:10px; border-radius:8px; background:#fff; text-align:center;">
+                                <img src="${p.image_url}" alt="${p.name}" style="width:100%; height:150px; object-fit:cover; border-radius:4px;">
+                                <h4 style="margin:10px 0 5px 0; font-size:1em;">${p.name}</h4>
+                                <p style="color:#9b2226; font-weight:bold; margin:0;">$${Number(p.price).toFixed(2)}</p>
+                            </div>
+                        `).join('');
+                        
+                        featuredHtml = `
+                            <div class="featured-section">
+                                <h2 class="featured-title">Featured Pieces Inspired by This Story</h2>
+                                <div class="product-grid">
+                                    ${prods}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    main.innerHTML = `
+                        <div class="article-container">
+                            <h1 class="article-title">${s.title}</h1>
+                            <img src="${s.image_url}" alt="${s.title}" class="article-img">
+                            <div class="article-content">
+                                ${s.content.split('\n').map(p => `<p>${p}</p>`).join('')}
+                            </div>
+                        </div>
+                        ${featuredHtml}
+                    `;
+                } else {
+                    main.innerHTML = `<p style="text-align:center; margin-top:50px;">${data.error.detail}</p>`;
+                }
+            } catch (e) {
+                main.innerHTML = '<p style="text-align:center; margin-top:50px;">Error loading story.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

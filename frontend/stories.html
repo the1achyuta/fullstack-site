@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stories | Shades of Chettinad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background-color: #fdfcfa;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            color: #9b2226;
+            margin-bottom: 15px;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .story-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .story-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .story-card-content {
+            padding: 20px;
+        }
+        .story-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container nav-flex">
+            
+            <nav class="nav-links">
+                <a href="index.html">Shop</a>
+                <a href="stories.html">Stories</a>
+                <a href="dashboard.html">My Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Heritage Stories</h1>
+            <p style="color: #666; max-width: 600px; margin: 0 auto;">Discover the history, craftsmanship, and culture behind our curated collections.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div id="stories-grid" class="story-grid">
+            <div class="loader"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-flex" style="text-align: center; justify-content: center;">
+            <p>&copy; 2026 Shades of Chettinad. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('stories-grid');
+            try {
+                const res = await fetch('/backend/api.php?action=get_stories');
+                const data = await res.json();
+                if (data.success) {
+                    grid.innerHTML = data.data.stories.map(s => `
+                        <div class="story-card" onclick="window.location.href='story.html?id=${s.id}'">
+                            <img src="${s.image_url}" alt="${s.title}">
+                            <div class="story-card-content">
+                                <h3>${s.title}</h3>
+                                <p style="color: #D4AF37; font-size: 0.9em;">Read Article &rarr;</p>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch(e) {
+                grid.innerHTML = '<p>Error loading stories.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
